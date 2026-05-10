@@ -1,50 +1,53 @@
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import JsonOutputParser
+from utils.llm import llm
+
+parser = JsonOutputParser()
+
+prompt_template = PromptTemplate(
+    template="""
+You are a software system architect AI.
+
+Your task is to convert structured app intent into
+a software architecture design.
+
+Generate:
+- entities
+- flows
+- roles
+- permissions
+
+Return ONLY valid JSON.
+
+Intent:
+{intent}
+
+Example Output:
+{{
+  "entities": ["User", "Contact"],
+  "flows": ["login", "manage_contacts"],
+  "roles": ["admin", "user"],
+  "permissions": [
+    {{
+      "role": "admin",
+      "access": ["dashboard", "analytics"]
+    }},
+    {{
+      "role": "user",
+      "access": ["basic_features"]
+    }}
+  ]
+}}
+""",
+    input_variables=["intent"]
+)
+
+chain = prompt_template | llm | parser
+
+
 def design_system(intent):
-    entities = []
-    flows = []
-    permissions = []
-
-    features = intent.get("features", [])
-    roles = intent.get("roles", [])
-
-    # Authentication
-    if "auth" in features:
-        entities.append("User")
-        flows.append("login")
-        flows.append("signup")
-
-    # CRM / Contacts
-    if "contacts" in features:
-        entities.append("Contact")
-        flows.append("manage_contacts")
-
-    # Dashboard
-    if "dashboard" in features:
-        flows.append("view_dashboard")
-
-    # Analytics
-    if "analytics" in features:
-        flows.append("view_analytics")
-
-    # Payments
-    if "payments" in features:
-        entities.append("Subscription")
-        flows.append("process_payment")
-
-    # Roles & permissions
-    if "admin" in roles:
-        permissions.append({
-            "role": "admin",
-            "access": ["analytics", "dashboard"]
-        })
-
-    permissions.append({
-        "role": "user",
-        "access": ["basic_features"]
+    result = chain.invoke({
+        "intent": intent
     })
 
-    return {
-        "entities": list(set(entities)),
-        "flows": list(set(flows)),
-        "roles": roles,
-        "permissions": permissions
-    }
+    return result
