@@ -3,4 +3,5 @@ import os
 
 load_dotenv()
 
-print(os.getenv("GROQ_API_KEY"))
+print(print("GROQ_API_KEY loaded:", bool(os.getenv("GROQ_API_KEY")))
+)
