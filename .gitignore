@@ -3,4 +3,6 @@ __pycache__/
 *.pyc
 node_modules/
 Update.md
-test_model.py
+test_model.py\
+.venv/
+venv/
