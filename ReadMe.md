@@ -1,11 +1,12 @@
-🤖 Compylr AI
+# 🤖 Compylr AI
 
-Turning Natural Language into Reliable Software Systems
+## Turning Natural Language into Reliable Software Systems
 
 Compylr AI is a compiler-style AI platform that transforms natural language product requirements into structured, validated, and executable full-stack application configurations.
 
 Instead of directly generating code from prompts, Compylr AI follows a deterministic multi-stage pipeline inspired by traditional compiler architecture:
 
+```text
 Natural Language
         ↓
 Intent Extraction
@@ -17,22 +18,25 @@ Schema Generation
 Validation & Repair
         ↓
 Executable Application Config
+```
 
-Built for reliable AI-driven software generation with execution awareness, schema consistency, and modular reasoning pipelines. 
-
+Built for reliable AI-driven software generation with execution awareness, schema consistency, and modular reasoning pipelines.
 
 ---
 
-🚀 Overview
+# 🚀 Overview
 
 Modern AI systems often rely on:
 
+```text
 Prompt → Code
+```
 
 This approach is fast but unreliable.
 
 Compylr AI introduces a structured engineering workflow:
 
+```text
 Prompt
   ↓
 Intent Understanding
@@ -46,153 +50,140 @@ Validation
 Repair
   ↓
 Executable Output
+```
 
 The platform behaves more like a compiler than a chatbot.
 
 Its goal is to generate:
 
-predictable outputs
-
-structured configurations
-
-execution-ready systems
-
-reliable application architecture
-
-
+- Predictable outputs
+- Structured configurations
+- Execution-ready systems
+- Reliable application architecture
 
 ---
 
-🧠 What Compylr AI Generates
+# 🧠 What Compylr AI Generates
 
 Given a prompt like:
 
+```text
 Build a CRM with login, contacts, role-based access, analytics dashboard and premium subscriptions.
+```
 
 Compylr AI generates:
 
-✅ UI schema
-✅ API schema
-✅ Database schema
-✅ Authentication rules
-✅ Business logic
-✅ Role permissions
-✅ Execution-aware configurations
-
+- ✅ UI schema
+- ✅ API schema
+- ✅ Database schema
+- ✅ Authentication rules
+- ✅ Business logic
+- ✅ Role permissions
+- ✅ Execution-aware configurations
 
 ---
 
-🏗️ System Architecture
+# 🏗️ System Architecture
 
+```text
 ┌────────────────────┐
-                │  User Prompt Input │
-                └─────────┬──────────┘
-                          ↓
-               ┌─────────────────────┐
-               │ Intent Extraction   │
-               │ (LLM + Parsing)     │
-               └─────────┬───────────┘
-                         ↓
-               ┌─────────────────────┐
-               │ System Design Layer │
-               │ (AI Architecture)   │
-               └─────────┬───────────┘
-                         ↓
-               ┌─────────────────────┐
-               │ Schema Generator    │
-               │ UI/API/DB/Auth      │
-               └─────────┬───────────┘
-                         ↓
-               ┌─────────────────────┐
-               │ Validation Engine   │
-               │ Type & Logic Checks │
-               └─────────┬───────────┘
-                         ↓
-               ┌─────────────────────┐
-               │ Repair Engine       │
-               │ Auto Error Fixing   │
-               └─────────┬───────────┘
-                         ↓
-               ┌─────────────────────┐
-               │ Executable Runtime  │
-               └─────────────────────┘
-
-
----
-
-⚙️ Tech Stack
-
-Backend
-
-Python
-
-[FastAPI](https://fastapi.tiangolo.com?utm_source=chatgpt.com)
-
-[Pydantic](https://docs.pydantic.dev?utm_source=chatgpt.com)
-
-[LangChain](https://www.langchain.com?utm_source=chatgpt.com)
-
-
-AI Infrastructure
-
-Groq API
-
-LLM-based reasoning pipeline
-
-Structured prompt orchestration
-
-
-Validation System
-
-Pydantic schema enforcement
-
-Cross-layer consistency validation
-
-Deterministic output verification
-
-
+│  User Prompt Input │
+└─────────┬──────────┘
+          ↓
+┌─────────────────────┐
+│ Intent Extraction   │
+│ (LLM + Parsing)     │
+└─────────┬───────────┘
+          ↓
+┌─────────────────────┐
+│ System Design Layer │
+│ (AI Architecture)   │
+└─────────┬───────────┘
+          ↓
+┌─────────────────────┐
+│ Schema Generator    │
+│ UI/API/DB/Auth      │
+└─────────┬───────────┘
+          ↓
+┌─────────────────────┐
+│ Validation Engine   │
+│ Type & Logic Checks │
+└─────────┬───────────┘
+          ↓
+┌─────────────────────┐
+│ Repair Engine       │
+│ Auto Error Fixing   │
+└─────────┬───────────┘
+          ↓
+┌─────────────────────┐
+│ Executable Runtime  │
+└─────────────────────┘
+```
 
 ---
 
-🧩 Multi-Stage Compiler Pipeline
+# ⚙️ Tech Stack
 
-1️⃣ Intent Extraction
+## Backend
+
+- Python
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [Pydantic](https://docs.pydantic.dev/)
+- [LangChain](https://www.langchain.com/)
+
+## AI Infrastructure
+
+- Groq API
+- LLM-based reasoning pipeline
+- Structured prompt orchestration
+
+## Validation System
+
+- Pydantic schema enforcement
+- Cross-layer consistency validation
+- Deterministic output verification
+
+---
+
+# 🧩 Multi-Stage Compiler Pipeline
+
+## 1️⃣ Intent Extraction
 
 Extracts structured application intent from natural language.
 
-Input
+### Input
 
+```text
 Build a CRM with login and admin analytics dashboard
+```
 
-Output
+### Output
 
+```json
 {
   "features": ["auth", "dashboard", "contacts", "analytics"],
   "roles": ["admin", "user"]
 }
+```
 
 This stage focuses on semantic understanding of user requirements.
 
-
 ---
 
-2️⃣ System Design Layer
+## 2️⃣ System Design Layer
 
 Converts intent into architecture-level planning.
 
-Generates:
+### Generates
 
-entities
+- Entities
+- Workflows
+- Permissions
+- Application structure
 
-workflows
+### Example
 
-permissions
-
-application structure
-
-
-Example
-
+```json
 {
   "entities": ["User", "Contact"],
   "flows": [
@@ -207,29 +198,26 @@ Example
     }
   ]
 }
+```
 
 This acts as the architectural planner of the pipeline.
 
-
 ---
 
-3️⃣ Schema Generation
+## 3️⃣ Schema Generation
 
 Transforms architecture into executable configurations.
 
-Generated layers:
+### Generated Layers
 
-UI configuration
+- UI configuration
+- API schema
+- Database schema
+- Authentication schema
 
-API schema
+### Example
 
-Database schema
-
-Authentication schema
-
-
-Example
-
+```json
 {
   "db_schema": {
     "User": {
@@ -238,66 +226,59 @@ Example
     }
   }
 }
-
+```
 
 ---
 
-4️⃣ Validation Engine
+## 4️⃣ Validation Engine
 
 Ensures reliability and consistency across all generated layers.
 
-Validation checks include:
+### Validation Checks
 
-✅ Valid JSON
-✅ Required fields present
-✅ Type safety
-✅ API ↔ DB consistency
-✅ UI ↔ API mapping
-✅ Permission validation
-✅ Entity reference validation
+- ✅ Valid JSON
+- ✅ Required fields present
+- ✅ Type safety
+- ✅ API ↔ DB consistency
+- ✅ UI ↔ API mapping
+- ✅ Permission validation
+- ✅ Entity reference validation
 
-This stage ensures deterministic and production-safe outputs. 
-
+This stage ensures deterministic and production-safe outputs.
 
 ---
 
-5️⃣ Repair Engine
+## 5️⃣ Repair Engine
 
 Automatically detects and fixes:
 
-invalid JSON
-
-missing fields
-
-hallucinated properties
-
-schema mismatches
-
-logical inconsistencies
-
+- Invalid JSON
+- Missing fields
+- Hallucinated properties
+- Schema mismatches
+- Logical inconsistencies
 
 Instead of regenerating the entire application blindly, Compylr AI repairs only broken sections.
 
 This significantly improves:
 
-reliability
-
-latency
-
-output consistency
-
-
+- Reliability
+- Latency
+- Output consistency
 
 ---
 
-🔥 Why This Project Is Different
+# 🔥 Why This Project Is Different
 
 Most AI generators stop at:
 
+```text
 Prompt → Response
+```
 
 Compylr AI focuses on:
 
+```text
 Reasoning
   +
 Validation
@@ -305,52 +286,42 @@ Validation
 Repair
   +
 Execution Awareness
+```
 
 The project is designed like a real AI infrastructure system rather than a simple prompt wrapper.
 
-
 ---
 
-🛡️ Why LangChain?
+# 🛡️ Why LangChain?
 
 LangChain is used for:
 
-multi-stage orchestration
+- Multi-stage orchestration
+- Modular AI pipelines
+- Structured prompt management
+- Output parsing
+- Deterministic workflow design
 
-modular AI pipelines
-
-structured prompt management
-
-output parsing
-
-deterministic workflow design
-
-
-Instead of relying on a single large prompt, the platform uses separate reasoning stages for better control and reliability. 
-
+Instead of relying on a single large prompt, the platform uses separate reasoning stages for better control and reliability.
 
 ---
 
-🧱 Why Pydantic?
+# 🧱 Why Pydantic?
 
 Pydantic provides:
 
-strict schema contracts
+- Strict schema contracts
+- Type enforcement
+- Validation layers
+- Predictable structured outputs
 
-type enforcement
-
-validation layers
-
-predictable structured outputs
-
-
-This enables deterministic behavior throughout the compiler pipeline. 
-
+This enables deterministic behavior throughout the compiler pipeline.
 
 ---
 
-📂 Project Structure
+# 📂 Project Structure
 
+```text
 Compylr-AI/
 │
 ├── app/
@@ -375,148 +346,120 @@ Compylr-AI/
 ├── requirements.txt
 │
 └── README.md
-
-
----
-
-🚀 Features
-
-✅ Compiler-style AI pipeline
-✅ Multi-stage reasoning architecture
-✅ Deterministic validation system
-✅ Intelligent repair engine
-✅ Structured schema generation
-✅ Execution-aware outputs
-✅ Cross-layer consistency checking
-✅ Modular AI infrastructure
-
+```
 
 ---
 
-▶️ Running the Project
+# 🚀 Features
 
-Clone Repository
+- ✅ Compiler-style AI pipeline
+- ✅ Multi-stage reasoning architecture
+- ✅ Deterministic validation system
+- ✅ Intelligent repair engine
+- ✅ Structured schema generation
+- ✅ Execution-aware outputs
+- ✅ Cross-layer consistency checking
+- ✅ Modular AI infrastructure
 
+---
+
+# ▶️ Running the Project
+
+## Clone Repository
+
+```bash
 git clone https://github.com/your-username/compylr-ai.git
 cd compylr-ai
-
+```
 
 ---
 
-Create Virtual Environment
+## Create Virtual Environment
 
+```bash
 python -m venv venv
+```
 
-Windows
+### Windows
 
+```bash
 venv\Scripts\activate
+```
 
-Linux / Mac
+### Linux / Mac
 
+```bash
 source venv/bin/activate
-
+```
 
 ---
 
-Install Dependencies
+## Install Dependencies
 
+```bash
 pip install -r requirements.txt
-
+```
 
 ---
 
-Start FastAPI Server
+## Start FastAPI Server
 
+```bash
 uvicorn app.main:app --reload
-
+```
 
 ---
 
-🧪 Evaluation Framework
+# 🧪 Evaluation Framework
 
 The platform evaluates:
 
-success rate
-
-retry count
-
-validation failures
-
-latency
-
-consistency
-
-repair frequency
-
+- Success rate
+- Retry count
+- Validation failures
+- Latency
+- Consistency
+- Repair frequency
 
 It is also designed to handle:
 
-vague prompts
-
-conflicting requirements
-
-incomplete instructions
-
-
+- Vague prompts
+- Conflicting requirements
+- Incomplete instructions
 
 ---
 
-🎯 Core Engineering Concepts
+# 🎯 Core Engineering Concepts
 
 This project explores:
 
-AI orchestration systems
+- AI orchestration systems
+- Compiler-inspired architecture
+- Structured generation pipelines
+- Deterministic AI workflows
+- Validation engineering
+- Repair-based reliability systems
+- Execution-aware AI infrastructure
 
-compiler-inspired architecture
+---
 
-structured generation pipelines
+# 🔮 Future Improvements
 
-deterministic AI workflows
-
-validation engineering
-
-repair-based reliability systems
-
-execution-aware AI infrastructure
-
+- Runtime application generation
+- Frontend code generation
+- Docker deployment
+- Kubernetes orchestration
+- Vector memory / RAG
+- Streaming execution pipeline
+- Multi-agent repair systems
+- SaaS deployment architecture
 
 
 ---
 
-🔮 Future Improvements
+# 👨‍💻 Author
 
-Runtime application generation
+## Siddharth Singh Bhadouriya
 
-Frontend code generation
-
-Docker deployment
-
-Kubernetes orchestration
-
-Vector memory / RAG
-
-Streaming execution pipeline
-
-Multi-agent repair systems
-
-SaaS deployment architecture
-
-
-
----
-
-📌 Inspiration
-
-Inspired by modern AI-native application generation systems like:
-
-[Base44](https://base44.com/?utm_source=chatgpt.com)
-
-
----
-
-👨‍💻 Author
-
-Siddharth Singh Bhadouriya
-
-AI Systems & Infrastructure Builder
+AI Systems & Infrastructure Builder  
 Focused on reliable, execution-aware, compiler-style AI architectures.
