@@ -1,6 +1,11 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from utils.llm import llm
+from pydantic import ValidationError
+from pipeline.models.design_model import (
+     DesignSchema,
+     Permission
+     )
 
 parser = JsonOutputParser()
 
@@ -50,4 +55,22 @@ def design_system(intent):
         "intent": intent
     })
 
-    return result
+    try:
+
+        validated_result = DesignSchema(
+            entities=result.get("entities", []),
+            flows=result.get("flows", []),
+            roles=result.get("roles", []),
+            permissions=[
+                Permission(**permission)
+                for permission in result.get("permissions", [])
+            ]
+        )
+        return validated_result
+
+    except ValidationError as e:
+
+        print("Validation Error:")
+        print(e)
+
+        return None

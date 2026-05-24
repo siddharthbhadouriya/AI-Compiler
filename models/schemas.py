@@ -9,7 +9,7 @@ class Field(BaseModel):
 
 class Entity(BaseModel):
     name : str
-    fields : list[Field]
+    fields : List[Field]
 
 class Relationship(BaseModel):
     source : str
@@ -22,8 +22,8 @@ class APIRoute (BaseModel):
     description : str
 
 class System_schema (BaseModel):
-    entities : list[Entity]
-    Relationships : list[Relationship]
-    api_routes : list[APIRoute]
+    entities : List[Entity]
+    relationships : List[Relationship]
+    api_routes : List[APIRoute]
 
 
