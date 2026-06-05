@@ -2,7 +2,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from utils.llm import llm
 from pydantic import ValidationError
-from pipeline.models.design_model import (
+from pipeline.models.schema_models import (
      DesignSchema,
      Permission
      )
