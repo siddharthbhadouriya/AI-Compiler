@@ -9,10 +9,12 @@ from pipeline.models.schema_models import (
 parser = JsonOutputParser()
 
 prompt_template = PromptTemplate(
-    template= """
-you are a schema generation engine for a compiler-style AI platform.
-convert this system design into a complete, cross-consistent application schema.
-STRICT RULES :
+    template="""
+You are a schema generation engine for a compiler-style AI platform.
+
+Convert this system design into a complete, cross-consistent application schema.
+
+STRICT RULES:
 - db_schema field types MUST be one of: string, integer, boolean, datetime, text
 - api_schema entity MUST match a name in db_schema
 - ui_schema api_routes MUST match paths in api_schema
@@ -56,12 +58,9 @@ Output format:
     {{"role": "user", "permissions": ["read", "write"]}}
   ]
 }}
-
-
-"""
-input_variables= ['design']
+""",
+    input_variables=["design"]
 )
-
 chain  = prompt_template | llm | parser
 
 def  generate_schema(design):
