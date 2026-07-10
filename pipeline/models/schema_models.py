@@ -32,3 +32,13 @@ class AppSchema(BaseModel):
     api_schema: List[APIRoute] = Field(default_factory=list)
     ui_schema: List[UIComponent] = Field(default_factory=list)
     auth_schema: List[AuthRule] = Field(default_factory=list)
+
+class Permission(BaseModel):
+    role: str
+    access: List[str]
+
+class DesignSchema(BaseModel):
+    entities: List[str] = Field(default_factory=list)
+    flows: List[str] = Field(default_factory=list)
+    roles: List[str] = Field(default_factory=list)
+    permissions: List[Permission] = Field(default_factory=list)

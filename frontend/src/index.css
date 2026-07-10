@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-void: #0a0c0e;
+  --bg-panel: #12151a;
+  --bg-panel-alt: #181c22;
+  --bg-input: #0d0f12;
+  --border-line: #262b33;
+  --border-line-soft: #1b1f26;
+  --text-primary: #e6e9ec;
+  --text-dim: #7a828e;
+  --text-faint: #4a5058;
+  --accent-signal: #5eead4;
+  --accent-warn: #f5a623;
+  --accent-error: #fb6f6f;
+  --accent-ok: #4ade80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(94, 234, 212, 0.05), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(94, 234, 212, 0.03), transparent 45%);
+}
+
+::selection {
+  background: rgba(94, 234, 212, 0.25);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-panel); }
+::-webkit-scrollbar-thumb { background: var(--border-line); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-faint); }
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor-blink { animation: blink-cursor 1s step-start infinite; }
+
+@keyframes spin-glyph { to { transform: rotate(360deg); } }
+.spin-glyph { animation: spin-glyph 0.9s linear infinite; display: inline-block; }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fade-in-up 0.25s ease-out; }
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink, .spin-glyph, .fade-in-up { animation: none !important; }
+}
